@@ -6,8 +6,17 @@ import 'components/add_product_form.dart';
 import 'components/order_details_section.dart';
 import 'components/product_list_section.dart';
 import 'components/product_summery_section.dart';
+import 'package:admin_panel/core/data/data_provider.dart';
 
-class DashboardScreen extends StatelessWidget {
+
+class DashboardScreen extends StatefulWidget {
+  @override
+  State<DashboardScreen> createState() => _DashboardScreenState();
+}
+
+class _DashboardScreenState extends State<DashboardScreen> {
+    DataProvider dataProvider = new DataProvider();
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -49,8 +58,9 @@ class DashboardScreen extends StatelessWidget {
                           ),
                           Gap(20),
                           IconButton(
-                              onPressed: () {
+                              onPressed: () async {
                                 //TODO: should complete call getAllProduct
+                                var result = await dataProvider.getAllProduct();
                               },
                               icon: Icon(Icons.refresh)),
                         ],

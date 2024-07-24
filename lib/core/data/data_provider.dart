@@ -1,3 +1,7 @@
+import 'dart:convert';
+
+import 'package:admin_panel/utility/constants.dart';
+
 import '../../models/api_response.dart';
 import '../../models/coupon.dart';
 import '../../models/my_notification.dart';
@@ -20,7 +24,7 @@ class DataProvider extends ChangeNotifier {
 
   List<Category> _allCategories = [];
   List<Category> _filteredCategories = [];
-  List<Category> get categories => _filteredCategories;
+  List<Category> get categories => _allCategories;
 
   List<SubCategory> _allSubCategories = [];
   List<SubCategory> _filteredSubCategories = [];
@@ -41,7 +45,7 @@ class DataProvider extends ChangeNotifier {
 
   List<Product> _allProducts = [];
   List<Product> _filteredProducts = [];
-  List<Product> get products => _filteredProducts;
+  List<Product> get products => _allProducts;
 
   List<Coupon> _allCoupons = [];
   List<Coupon> _filteredCoupons = [];
@@ -61,76 +65,91 @@ class DataProvider extends ChangeNotifier {
 
   DataProvider() {}
 
-
   //TODO: should complete getAllCategory
+  getAllCategory() async {
+    var response =
+        await service.getItems(endpointUrl: ApiPath.getAllCategory());
+    if (response.statusCode == 200) {
+      var result = jsonDecode(response.bodyString ?? "{}") ?? {};
+      if (result["categories"] != null) {
+        List<dynamic> listCate = result["categories"];
+        try {
+          var category =
+              listCate.map((cate) => Category.fromJson(cate)).toList();
+          _allCategories = category;
+          notifyListeners();
+        } catch (e) {
+          print(e);
+        }
+      }
+      print(result);
+    } else {
+      SnackBarHelper.showErrorSnackBar("Failed to get categories");
+    }
+  }
 
-
+  getAllProduct() async {
+    var response =
+        await service.getItems(endpointUrl: ApiPath.getAllProduct());
+    if (response.statusCode == 200) {
+      var result = jsonDecode(response.bodyString ?? "{}") ?? {};
+      if (result["products"] != null) {
+        List<dynamic> listProducts = result["products"];
+        try {
+          var products =
+              listProducts.map((product) => Product.fromJson(product)).toList();
+          _allProducts = products;
+          notifyListeners();
+        } catch (e) {
+          print(e);
+        }
+      }
+      print(result);
+    } else {
+      SnackBarHelper.showErrorSnackBar("Failed to get categories");
+    }
+  }
   //TODO: should complete filterCategories
 
   //TODO: should complete getAllSubCategory
 
-
   //TODO: should complete filterSubCategories
-
 
   //TODO: should complete getAllBrands
 
-
   //TODO: should complete filterBrands
-
 
   //TODO: should complete getAllVariantType
 
-
   //TODO: should complete filterVariantTypes
-
-
 
   //TODO: should complete getAllVariant
 
-
   //TODO: should complete filterVariants
-
 
   //TODO: should complete getAllProduct
 
-
   //TODO: should complete filterProducts
-
 
   //TODO: should complete getAllCoupons
 
-
   //TODO: should complete filterCoupons
-
 
   //TODO: should complete getAllPosters
 
-
   //TODO: should complete filterPosters
-
 
   //TODO: should complete getAllNotifications
 
-
   //TODO: should complete filterNotifications
-
 
   //TODO: should complete getAllOrders
 
-
   //TODO: should complete filterOrders
-
-
-
 
   //TODO: should complete calculateOrdersWithStatus
 
-
   //TODO: should complete filterProductsByQuantity
 
-
   //TODO: should complete calculateProductWithQuantity
-
-
 }

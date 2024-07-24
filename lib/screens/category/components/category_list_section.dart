@@ -5,13 +5,25 @@ import '../../../utility/constants.dart';
 import '../../../models/category.dart';
 import 'add_category_form.dart';
 
-class CategoryListSection extends StatelessWidget {
+class CategoryListSection extends StatefulWidget {
   const CategoryListSection({
     Key? key,
   }) : super(key: key);
 
   @override
+  State<CategoryListSection> createState() => _CategoryListSectionState();
+}
+
+class _CategoryListSectionState extends State<CategoryListSection> {
+  @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
+    DataProvider dataProvider = Provider.of<DataProvider>(context, listen: false);
+    dataProvider.getAllCategory();
     return Container(
       padding: EdgeInsets.all(defaultPadding),
       decoration: BoxDecoration(
@@ -48,10 +60,12 @@ class CategoryListSection extends StatelessWidget {
                   ],
                   rows: List.generate(
                     dataProvider.categories.length,
-                    (index) => categoryDataRow(dataProvider.categories[index], delete: () {
+                    (index) => categoryDataRow(dataProvider.categories[index],
+                        delete: () {
                       //TODO: should complete call  deleteCategory
                     }, edit: () {
-                      showAddCategoryForm(context, dataProvider.categories[index]);
+                      showAddCategoryForm(
+                          context, dataProvider.categories[index]);
                     }),
                   ),
                 );
@@ -74,7 +88,8 @@ DataRow categoryDataRow(Category CatInfo, {Function? edit, Function? delete}) {
               CatInfo.image ?? '',
               height: 30,
               width: 30,
-              errorBuilder: (BuildContext context, Object exception, StackTrace? stackTrace) {
+              errorBuilder: (BuildContext context, Object exception,
+                  StackTrace? stackTrace) {
                 return Icon(Icons.error);
               },
             ),

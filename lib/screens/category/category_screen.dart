@@ -1,3 +1,4 @@
+import 'package:admin_panel/core/data/data_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import '../../utility/constants.dart';
@@ -5,7 +6,19 @@ import 'components/add_category_form.dart';
 import 'components/category_header.dart';
 import 'components/category_list_section.dart';
 
-class CategoryScreen extends StatelessWidget {
+class CategoryScreen extends StatefulWidget {
+  @override
+  State<CategoryScreen> createState() => _CategoryScreenState();
+}
+
+class _CategoryScreenState extends State<CategoryScreen> {
+  DataProvider dataProvider = new DataProvider();
+
+  @override
+  void initState() {
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -47,8 +60,10 @@ class CategoryScreen extends StatelessWidget {
                           ),
                           Gap(20),
                           IconButton(
-                              onPressed: () {
-                                //TODO: should complete getAllCategory
+                              onPressed: () async {
+                                //TODO: should complete
+                                var result =
+                                    await dataProvider.getAllCategory();
                               },
                               icon: Icon(Icons.refresh)),
                         ],

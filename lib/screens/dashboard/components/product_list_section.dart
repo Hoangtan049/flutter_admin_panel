@@ -4,14 +4,27 @@ import 'add_product_form.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../../utility/constants.dart';
-
-class ProductListSection extends StatelessWidget {
+import '../../../utility/numbers.dart';
+class ProductListSection extends StatefulWidget {
   const ProductListSection({
     Key? key,
   }) : super(key: key);
 
   @override
+  State<ProductListSection> createState() => _ProductListSectionState();
+}
+
+class _ProductListSectionState extends State<ProductListSection> {
+
+    @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
+     DataProvider dataProvider = Provider.of<DataProvider>(context, listen: false);
+    dataProvider.getAllProduct();
     return Container(
       padding: EdgeInsets.all(defaultPadding),
       decoration: BoxDecoration(
@@ -42,9 +55,9 @@ class ProductListSection extends StatelessWidget {
                     DataColumn(
                       label: Text("Category"),
                     ),
-                    DataColumn(
-                      label: Text("Sub Category"),
-                    ),
+                    // DataColumn(
+                    //   label: Text("Sub Category"),
+                    // ),
                     DataColumn(
                       label: Text("Price"),
                     ),
@@ -81,7 +94,7 @@ DataRow productDataRow(Product productInfo,{Function? edit, Function? delete}) {
         Row(
           children: [
             Image.network(
-              productInfo.images?.first.url ?? '',
+              productInfo.image ?? '',
               height: 30,
               width: 30,
               errorBuilder: (BuildContext context, Object exception, StackTrace? stackTrace) {
@@ -95,9 +108,9 @@ DataRow productDataRow(Product productInfo,{Function? edit, Function? delete}) {
           ],
         ),
       ),
-      DataCell(Text(productInfo.proCategoryId?.name ?? '')),
-      DataCell(Text(productInfo.proSubCategoryId?.name ?? '')),
-      DataCell(Text('${productInfo.price}'),),
+      DataCell(Text(productInfo.proCategoryId?.name ?? 'Đồ uống')),
+      //DataCell(Text(productInfo.proSubCategoryId?.name ?? '')),
+      DataCell(Text('${numberFormatter(productInfo.price ?? 9000)}'),),
       DataCell(IconButton(
           onPressed: () {
             if (edit != null) edit();

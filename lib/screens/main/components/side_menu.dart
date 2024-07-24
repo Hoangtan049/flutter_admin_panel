@@ -34,34 +34,34 @@ class SideMenu extends StatelessWidget {
               context.mainScreenProvider.navigateToScreen('Category');
             },
           ),
-          DrawerListTile(
-            title: "Sub Category",
-            svgSrc: "assets/icons/menu_task.svg",
-            press: () {
-              context.mainScreenProvider.navigateToScreen('SubCategory');
-            },
-          ),
-          DrawerListTile(
-            title: "Brands",
-            svgSrc: "assets/icons/menu_doc.svg",
-            press: () {
-              context.mainScreenProvider.navigateToScreen('Brands');
-            },
-          ),
-          DrawerListTile(
-            title: "Variant Type",
-            svgSrc: "assets/icons/menu_store.svg",
-            press: () {
-              context.mainScreenProvider.navigateToScreen('VariantType');
-            },
-          ),
-          DrawerListTile(
-            title: "Variants",
-            svgSrc: "assets/icons/menu_notification.svg",
-            press: () {
-              context.mainScreenProvider.navigateToScreen('Variants');
-            },
-          ),
+          // DrawerListTile(
+          //   title: "Sub Category",
+          //   svgSrc: "assets/icons/menu_task.svg",
+          //   press: () {
+          //     context.mainScreenProvider.navigateToScreen('SubCategory');
+          //   },
+          // ),
+          // DrawerListTile(
+          //   title: "Brands",
+          //   svgSrc: "assets/icons/menu_doc.svg",
+          //   press: () {
+          //     context.mainScreenProvider.navigateToScreen('Brands');
+          //   },
+          // ),
+          // DrawerListTile(
+          //   title: "Variant Type",
+          //   svgSrc: "assets/icons/menu_store.svg",
+          //   press: () {
+          //     context.mainScreenProvider.navigateToScreen('VariantType');
+          //   },
+          // ),
+          // DrawerListTile(
+          //   title: "Variants",
+          //   svgSrc: "assets/icons/menu_notification.svg",
+          //   press: () {
+          //     context.mainScreenProvider.navigateToScreen('Variants');
+          //   },
+          // ),
           DrawerListTile(
             title: "Orders",
             svgSrc: "assets/icons/menu_profile.svg",
@@ -76,20 +76,20 @@ class SideMenu extends StatelessWidget {
               context.mainScreenProvider.navigateToScreen('Coupon');
             },
           ),
-          DrawerListTile(
-            title: "Posters",
-            svgSrc: "assets/icons/menu_doc.svg",
-            press: () {
-              context.mainScreenProvider.navigateToScreen('Poster');
-            },
-          ),
-          DrawerListTile(
-            title: "Notifications",
-            svgSrc: "assets/icons/menu_notification.svg",
-            press: () {
-              context.mainScreenProvider.navigateToScreen('Notifications');
-            },
-          ),
+          // DrawerListTile(
+          //   title: "Posters",
+          //   svgSrc: "assets/icons/menu_doc.svg",
+          //   press: () {
+          //     context.mainScreenProvider.navigateToScreen('Poster');
+          //   },
+          // ),
+          // DrawerListTile(
+          //   title: "Notifications",
+          //   svgSrc: "assets/icons/menu_notification.svg",
+          //   press: () {
+          //     context.mainScreenProvider.navigateToScreen('Notifications');
+          //   },
+          // ),
         ],
       ),
     );
