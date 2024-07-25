@@ -31,7 +31,7 @@ class OrderDetailsSection extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                "Orders Details",
+                "Chi tiết đơn hàng",
                 style: TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.w500,
@@ -41,34 +41,30 @@ class OrderDetailsSection extends StatelessWidget {
               Chart(),
               OrderInfoCard(
                 svgSrc: "assets/icons/delivery.svg",
-                title: "All Orders",
+                title: "Tất cả đơn hàng",
                 totalOrder: totalOrder,
               ),
               OrderInfoCard(
                 svgSrc: "assets/icons/pending_delivery.svg",
-                title: "Pending Orders",
+                title: "Đang chờ phê duyệt",
                 totalOrder: pendingOrder,
               ),
               OrderInfoCard(
                 svgSrc: "assets/icons/process_delivery.svg",
-                title: "Processed Orders",
+                title: "Đơn đã xử lý",
                 totalOrder: processingOrder,
               ),
               OrderInfoCard(
                 svgSrc: "assets/icons/delivery.svg",
-                title: "Cancelled Orders",
+                title: "Đơn đã hủy",
                 totalOrder: cancelledOrder,
               ),
               OrderInfoCard(
                 svgSrc: "assets/icons/delivery.svg",
-                title: "Shipped Orders",
+                title: "Đơn đã giao",
                 totalOrder: shippedOrder,
               ),
-              OrderInfoCard(
-                svgSrc: "assets/icons/delivery.svg",
-                title: "Delivered Orders",
-                totalOrder: deliveredOrder,
-              ),
+              
             ],
           ),
         );

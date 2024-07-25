@@ -21,14 +21,14 @@ class SideMenu extends StatelessWidget {
             ),
           ),
           DrawerListTile(
-            title: "Dashboard",
+            title: "Trang chủ",
             svgSrc: "assets/icons/menu_dashboard.svg",
             press: () {
               context.mainScreenProvider.navigateToScreen('Dashboard');
             },
           ),
           DrawerListTile(
-            title: "Category",
+            title: "Danh mục",
             svgSrc: "assets/icons/menu_tran.svg",
             press: () {
               context.mainScreenProvider.navigateToScreen('Category');
@@ -63,14 +63,14 @@ class SideMenu extends StatelessWidget {
           //   },
           // ),
           DrawerListTile(
-            title: "Orders",
+            title: "Đơn hàng",
             svgSrc: "assets/icons/menu_profile.svg",
             press: () {
               context.mainScreenProvider.navigateToScreen('Order');
             },
           ),
           DrawerListTile(
-            title: "Coupons",
+            title: "Mã khuyến mãi",
             svgSrc: "assets/icons/menu_setting.svg",
             press: () {
               context.mainScreenProvider.navigateToScreen('Coupon');

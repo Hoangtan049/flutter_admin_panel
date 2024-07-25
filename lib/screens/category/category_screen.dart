@@ -41,7 +41,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
                         children: [
                           Expanded(
                             child: Text(
-                              "My Categories",
+                              "Danh mục",
                               style: Theme.of(context).textTheme.titleMedium,
                             ),
                           ),
@@ -56,7 +56,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
                               showAddCategoryForm(context, null);
                             },
                             icon: Icon(Icons.add),
-                            label: Text("Add New"),
+                            label: Text("Thêm"),
                           ),
                           Gap(20),
                           IconButton(

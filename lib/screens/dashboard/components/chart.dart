@@ -41,7 +41,7 @@ class Chart extends StatelessWidget {
                   },
                 ),
                 SizedBox(height: defaultPadding),
-                Text("Order")
+                Text("Đơn hàng")
               ],
             ),
           ),

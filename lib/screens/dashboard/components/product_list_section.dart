@@ -35,7 +35,7 @@ class _ProductListSectionState extends State<ProductListSection> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            "All Products",
+            "Tất cả sản phẩm",
             style: Theme
                 .of(context)
                 .textTheme
@@ -50,22 +50,22 @@ class _ProductListSectionState extends State<ProductListSection> {
                   // minWidth: 600,
                   columns: [
                     DataColumn(
-                      label: Text("Product Name"),
+                      label: Text("Tên sản phẩm"),
                     ),
                     DataColumn(
-                      label: Text("Category"),
+                      label: Text("Danh mục"),
                     ),
                     // DataColumn(
                     //   label: Text("Sub Category"),
                     // ),
                     DataColumn(
-                      label: Text("Price"),
+                      label: Text("Giá"),
                     ),
                     DataColumn(
-                      label: Text("Edit"),
+                      label: Text("Sửa"),
                     ),
                     DataColumn(
-                      label: Text("Delete"),
+                      label: Text("Xóa"),
                     ),
                   ],
                   rows: List.generate(

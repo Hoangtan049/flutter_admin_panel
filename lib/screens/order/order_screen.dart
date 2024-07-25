@@ -28,7 +28,7 @@ class OrderScreen extends StatelessWidget {
                         children: [
                           Expanded(
                             child: Text(
-                              "My Orders",
+                              "Danh sách đơn hàng",
                               style: Theme.of(context).textTheme.titleMedium,
                             ),
                           ),
@@ -36,7 +36,7 @@ class OrderScreen extends StatelessWidget {
                           SizedBox(
                             width: 280,
                             child: CustomDropdown(
-                              hintText: 'Filter Order By status',
+                              hintText: 'Lọc đơn hàng theo trạng thái',
                               initialValue: 'All order',
                               items: ['All order', 'pending', 'processing', 'shipped', 'delivered', 'cancelled'],
                               displayItem: (val) => val,

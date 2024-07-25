@@ -39,7 +39,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                         children: [
                           Expanded(
                             child: Text(
-                              "My Products",
+                              "Sản phẩm",
                               style: Theme.of(context).textTheme.titleMedium,
                             ),
                           ),
@@ -54,7 +54,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                               showAddProductForm(context, null);
                             },
                             icon: Icon(Icons.add),
-                            label: Text("Add New"),
+                            label: Text("Thêm mới"),
                           ),
                           Gap(20),
                           IconButton(

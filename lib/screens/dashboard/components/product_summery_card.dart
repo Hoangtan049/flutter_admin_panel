@@ -61,7 +61,7 @@ class ProductSummeryCard extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  "${info.productsCount} Product",
+                  "${info.productsCount} Sản phẩm",
                   style: Theme.of(context)
                       .textTheme
                       .bodySmall!

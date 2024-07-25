@@ -12,7 +12,7 @@ class DashBoardHeader extends StatelessWidget {
     return Row(
       children: [
         Text(
-          "Dashboard",
+          "Trang chủ",
           style: Theme.of(context).textTheme.titleLarge,
         ),
         Spacer(flex: 1),
@@ -76,7 +76,7 @@ class SearchField extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextField(
       decoration: InputDecoration(
-        hintText: "Search",
+        hintText: "Tìm kiếm",
         fillColor: secondaryColor,
         filled: true,
         border: OutlineInputBorder(

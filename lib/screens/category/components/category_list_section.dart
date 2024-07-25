@@ -34,7 +34,7 @@ class _CategoryListSectionState extends State<CategoryListSection> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            "All Categories",
+            "Tất cả danh mục",
             style: Theme.of(context).textTheme.titleMedium,
           ),
           SizedBox(
@@ -46,16 +46,16 @@ class _CategoryListSectionState extends State<CategoryListSection> {
                   // minWidth: 600,
                   columns: [
                     DataColumn(
-                      label: Text("Category Name"),
+                      label: Text("Tên danh mục"),
                     ),
                     DataColumn(
-                      label: Text("Added Date"),
+                      label: Text("Ngày thêm"),
                     ),
                     DataColumn(
-                      label: Text("Edit"),
+                      label: Text("Sửa"),
                     ),
                     DataColumn(
-                      label: Text("Delete"),
+                      label: Text("Xóa"),
                     ),
                   ],
                   rows: List.generate(

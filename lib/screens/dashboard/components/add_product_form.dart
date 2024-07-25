@@ -43,7 +43,7 @@ class ProductSubmitForm extends StatelessWidget {
                   Consumer<DashBoardProvider>(
                     builder: (context, dashProvider, child) {
                       return ProductImageCard(
-                        labelText: 'Main Image',
+                        labelText: 'Chọn hình ảnh',
                         imageFile: dashProvider.selectedMainImage,
                         imageUrlForUpdateImage: product?.images.safeElementAt(0)?.url,
                         onTap: () {
@@ -56,70 +56,70 @@ class ProductSubmitForm extends StatelessWidget {
                       );
                     },
                   ),
-                  Consumer<DashBoardProvider>(
-                    builder: (context, dashProvider, child) {
-                      return ProductImageCard(
-                        labelText: 'Second image',
-                        imageFile: dashProvider.selectedSecondImage,
-                        imageUrlForUpdateImage: product?.images.safeElementAt(1)?.url,
-                        onTap: () {
-                          dashProvider.pickImage(imageCardNumber: 2);
-                        },
-                        onRemoveImage: () {
-                          dashProvider.selectedSecondImage = null;
-                          dashProvider.updateUI();
-                        },
-                      );
-                    },
-                  ),
-                  Consumer<DashBoardProvider>(
-                    builder: (context, dashProvider, child) {
-                      return ProductImageCard(
-                        labelText: 'Third image',
-                        imageFile: dashProvider.selectedThirdImage,
-                        imageUrlForUpdateImage: product?.images.safeElementAt(2)?.url,
-                        onTap: () {
-                          dashProvider.pickImage(imageCardNumber: 3);
-                        },
-                        onRemoveImage: () {
-                          dashProvider.selectedThirdImage = null;
-                          dashProvider.updateUI();
-                        },
-                      );
-                    },
-                  ),
-                  Consumer<DashBoardProvider>(
-                    builder: (context, dashProvider, child) {
-                      return ProductImageCard(
-                        labelText: 'Fourth image',
-                        imageFile: dashProvider.selectedFourthImage,
-                        imageUrlForUpdateImage: product?.images.safeElementAt(3)?.url,
-                        onTap: () {
-                          dashProvider.pickImage(imageCardNumber: 4);
-                        },
-                        onRemoveImage: () {
-                          dashProvider.selectedFourthImage = null;
-                          dashProvider.updateUI();
-                        },
-                      );
-                    },
-                  ),
-                  Consumer<DashBoardProvider>(
-                    builder: (context, dashProvider, child) {
-                      return ProductImageCard(
-                        labelText: 'Fifth image',
-                        imageFile: dashProvider.selectedFifthImage,
-                        imageUrlForUpdateImage: product?.images.safeElementAt(4)?.url,
-                        onTap: () {
-                          dashProvider.pickImage(imageCardNumber: 5);
-                        },
-                        onRemoveImage: () {
-                          dashProvider.selectedFifthImage = null;
-                          dashProvider.updateUI();
-                        },
-                      );
-                    },
-                  ),
+                  // Consumer<DashBoardProvider>(
+                  //   builder: (context, dashProvider, child) {
+                  //     return ProductImageCard(
+                  //       labelText: 'Second image',
+                  //       imageFile: dashProvider.selectedSecondImage,
+                  //       imageUrlForUpdateImage: product?.images.safeElementAt(1)?.url,
+                  //       onTap: () {
+                  //         dashProvider.pickImage(imageCardNumber: 2);
+                  //       },
+                  //       onRemoveImage: () {
+                  //         dashProvider.selectedSecondImage = null;
+                  //         dashProvider.updateUI();
+                  //       },
+                  //     );
+                  //   },
+                  // ),
+                  // Consumer<DashBoardProvider>(
+                  //   builder: (context, dashProvider, child) {
+                  //     return ProductImageCard(
+                  //       labelText: 'Third image',
+                  //       imageFile: dashProvider.selectedThirdImage,
+                  //       imageUrlForUpdateImage: product?.images.safeElementAt(2)?.url,
+                  //       onTap: () {
+                  //         dashProvider.pickImage(imageCardNumber: 3);
+                  //       },
+                  //       onRemoveImage: () {
+                  //         dashProvider.selectedThirdImage = null;
+                  //         dashProvider.updateUI();
+                  //       },
+                  //     );
+                  //   },
+                  // ),
+                  // Consumer<DashBoardProvider>(
+                  //   builder: (context, dashProvider, child) {
+                  //     return ProductImageCard(
+                  //       labelText: 'Fourth image',
+                  //       imageFile: dashProvider.selectedFourthImage,
+                  //       imageUrlForUpdateImage: product?.images.safeElementAt(3)?.url,
+                  //       onTap: () {
+                  //         dashProvider.pickImage(imageCardNumber: 4);
+                  //       },
+                  //       onRemoveImage: () {
+                  //         dashProvider.selectedFourthImage = null;
+                  //         dashProvider.updateUI();
+                  //       },
+                  //     );
+                  //   },
+                  // ),
+                  // Consumer<DashBoardProvider>(
+                  //   builder: (context, dashProvider, child) {
+                  //     return ProductImageCard(
+                  //       labelText: 'Fifth image',
+                  //       imageFile: dashProvider.selectedFifthImage,
+                  //       imageUrlForUpdateImage: product?.images.safeElementAt(4)?.url,
+                  //       onTap: () {
+                  //         dashProvider.pickImage(imageCardNumber: 5);
+                  //       },
+                  //       onRemoveImage: () {
+                  //         dashProvider.selectedFifthImage = null;
+                  //         dashProvider.updateUI();
+                  //       },
+                  //     );
+                  //   },
+                  // ),
                 ],
               ),
               SizedBox(height: defaultPadding),

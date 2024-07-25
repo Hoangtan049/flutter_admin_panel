@@ -34,7 +34,7 @@ class CategorySubmitForm extends StatelessWidget {
               Consumer<CategoryProvider>(
                 builder: (context, catProvider, child) {
                   return CategoryImageCard(
-                    labelText: "Category",
+                    labelText: "Danh mục",
                     imageFile: catProvider.selectedImage,
                     imageUrlForUpdateImage: category?.image,
                     onTap: () {
@@ -46,11 +46,11 @@ class CategorySubmitForm extends StatelessWidget {
               Gap(defaultPadding),
               CustomTextField(
                 controller: context.categoryProvider.categoryNameCtrl,
-                labelText: 'Category Name',
+                labelText: 'Tên danh mục',
                 onSave: (val) {},
                 validator: (value) {
                   if (value == null || value.isEmpty) {
-                    return 'Please enter a category name';
+                    return 'Tên danh mục không trống';
                   }
                   return null;
                 },
@@ -67,7 +67,7 @@ class CategorySubmitForm extends StatelessWidget {
                     onPressed: () {
                       Navigator.of(context).pop(); // Close the popup
                     },
-                    child: Text('Cancel'),
+                    child: Text('Hủy'),
                   ),
                   Gap(defaultPadding),
                   ElevatedButton(
@@ -83,7 +83,7 @@ class CategorySubmitForm extends StatelessWidget {
                         Navigator.of(context).pop();
                       }
                     },
-                    child: Text('Submit'),
+                    child: Text('Tạo'),
                   ),
                 ],
               ),

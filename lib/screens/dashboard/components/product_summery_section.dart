@@ -16,31 +16,31 @@ class ProductSummerySection extends StatelessWidget {
 
     return Consumer<DataProvider>(
       builder: (context, dataProvider, _) {
-        int totalProduct = 1;
+        int totalProduct = dataProvider.products.length;
         int outOfStockProduct = 0;
         int limitedStockProduct = 0;
         int otherStockProduct =
             totalProduct - outOfStockProduct - limitedStockProduct;
 
         List<ProductSummeryInfo> productSummeryItems = [
-          ProductSummeryInfo(
-            title: "All Product",
-            productsCount: totalProduct,
-            svgSrc: "assets/icons/product.svg",
-            color: primaryColor,
-            percentage: 100,
-          ),
-          ProductSummeryInfo(
-            title: "Out of Stock",
-            productsCount: outOfStockProduct,
-            svgSrc: "assets/icons/stock_out.svg",
-            color: Color(0xFFEA3829),
-            percentage: totalProduct != 0
+            ProductSummeryInfo(
+              title: "Tất cả sản phẩm",
+              productsCount: totalProduct,
+              svgSrc: "assets/icons/product.svg",
+              color: primaryColor,
+              percentage: 100,
+            ),
+            ProductSummeryInfo(
+              title: "Hết hàng",
+              productsCount: outOfStockProduct,
+              svgSrc: "assets/icons/stock_out.svg",
+              color: Color(0xFFEA3829),
+              percentage: totalProduct != 0
                 ? (outOfStockProduct / totalProduct) * 100
                 : 0,
           ),
           ProductSummeryInfo(
-            title: "Limited Stock",
+            title: "Số lượng còn ít",
             productsCount: limitedStockProduct,
             svgSrc: "assets/icons/product.svg",
             color: Color(0xFFECBE23),
@@ -49,7 +49,7 @@ class ProductSummerySection extends StatelessWidget {
                 : 0,
           ),
           ProductSummeryInfo(
-            title: "Other Stock",
+            title: "Khác",
             productsCount: otherStockProduct,
             svgSrc: "assets/icons/product.svg",
             color: Color(0xFF47e228),
